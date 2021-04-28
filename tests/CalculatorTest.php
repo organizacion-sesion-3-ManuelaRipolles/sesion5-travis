@@ -33,5 +33,80 @@ class CalculatorTest extends TestCase
         $result = $this->calculator->division(10, 2);
         $this->assertEquals(5, $result);
     }
+    
+    
+    public function testPar1()
+    {
+        $result = $this->calculator->esPar(2);
+        $this->assertFalse($result);
+    }
+ 
+    public function testPar2()
+    {
+        $result = $this->calculator->esPar(-4);
+        $this->assertFalse($result);
+    }
+ 
+    public function testPar3()
+    {
+        $result = $this->calculator->esPar(4.5);
+        $this->assertFalse($result);
+    }
+ 
+    public function testPar4()
+    {
+        $result = $this->calculator->esPar(-9.9);
+        $this->assertFalse($result);
+    }
+ 
+ 
+    public function testPar5()
+    {
+        $result = $this->calculator->esPar("aaa");
+        $this->assertFalse($result);
+    }
+ 
+    public function testPar6()
+    {
+        $result = $this->calculator->esPar(0x1D);
+        $this->assertFalse($result);
+    }
+ 
+    public function testPar7()
+    {
+        $result = $this->calculator->esPar(0b1001);
+        $this->assertFalse($result);
+    }
+ 
+    public function testPar8()
+    {
+        $result = $this->calculator->esPar(065);
+        $this->assertFalse($result);
+    }
+    
+    public function testPar9()
+    {
+        $result = $this->calculator->esPar(2);
+        $this->assertTrue($result);
+    }
+    
+    public function testPar10()
+    {
+        $result = $this->calculator->esPar(0);
+        $this->assertTrue($result);
+    }
+    
+    public function testPar11()
+    {
+        $result = $this->calculator->esPar(-2);
+        $this->assertTrue($result);
+    }
+    
+    
+    public function testPar12()
+    {
+        $result = $this->calculator->esPar('');
+        $this->assertFalse($result);
+    }
  
 }
