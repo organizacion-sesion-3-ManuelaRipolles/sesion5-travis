@@ -38,13 +38,13 @@ class CalculatorTest extends TestCase
     public function testPar1()
     {
         $result = $this->calculator->esPar(2);
-        $this->assertFalse($result);
+        $this->assertTrue($result);
     }
  
     public function testPar2()
     {
         $result = $this->calculator->esPar(-4);
-        $this->assertFalse($result);
+        $this->assertTrue($result);
     }
  
     public function testPar3()
